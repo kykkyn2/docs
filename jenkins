@@ -1,0 +1,53 @@
+젠킨스 다운
+
+http://jenkins-ci.org/
+
+압축해제
+jar tvf jenkins.war
+
+실행
+java -jar jenkins.war
+
+젠킨스 실행
+http://localhost:8080/
+
+git 으로 실행할시
+Jenkins 관리 -> 플러그인 관리 -> 설치가능 탭 GitHub 플러그인 설치
+
+
+maven 설정
+
+Jenkins 관리 -> 시스템 설정 -> Maven 
+maven 설치 디렉토리 주소 설정 bin 까지 가면 안됨! 그전까지 ㅎ
+
+
+
+다시 시작하면
+git 생성됨
+
+프로젝트명 -> 구성 -> 소스코드관리에 git 생성됨
+
+Repository URL에는 git url 입력
+
+
+프로젝트명 -> 구성 build
+
+Root POM 에는 pom.xml 위치
+Root POM -> mvc/pom.xml
+goals and options -> package
+
+
+
+젠킨스 플러그인관리 / 설치 
+
+publish Over SSH plugin 설치
+
+Jenkins 관리 -> 시스템 설정 -> Publish over SSH 
+
+SSH Server 추가 
+
+프로젝트 파일 -> 구성 -> 맨밑에 Send bulid artifacts over SSH 클릭
+
+Transfer Set Source files 에 **/*.war 쓰고 적용 
+
+Bulid now
